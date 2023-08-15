@@ -13,10 +13,50 @@ final class CourseViewController: BaseViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		loadData()
 	}
 	
 	override func loadView() {
 		self.view = courseView
+	}
+	
+}
+
+extension CourseViewController {
+	@objc func loadData() {
+		courseView.startLoading()
+		// TODO: tableView 데이터 변경
+		DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+			print("reload done")
+			self.courseView.stopLoading()
+		}
+	}
+}
+
+extension CourseViewController {
+	func courseCategoryMenuDidTap(_ courseCategory: CourseCategory) {
+		// TODO: tableView 데이터 변경
+		print("\(courseCategory.title) did tap")
+	}
+}
+
+extension CourseViewController {
+	@objc func addCourseButtonDidTap() {
+		// TODO: 수업 추가 화면으로 이동
+		print("수업 추가 화면으로 이동")
+	}
+}
+
+extension CourseViewController: UITableViewDelegate, UITableViewDataSource {
+	
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 100
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = UITableViewCell()
+		cell.textLabel?.text = "\(indexPath.row)"
+		return cell
 	}
 	
 }
