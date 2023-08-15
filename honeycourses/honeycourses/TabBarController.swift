@@ -7,13 +7,13 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+final class TabBarController: UITabBarController {
 	
-	private let reviewViewController: ReviewViewController = {
-		let reviewViewController = ReviewViewController()
-		reviewViewController.title = "수업 리뷰"
-		reviewViewController.tabBarItem.image = UIImage(systemName: "books.vertical")
-		return reviewViewController
+	private let courseViewController: CourseViewController = {
+		let courseViewController = CourseViewController()
+		courseViewController.title = "수업 리뷰"
+		courseViewController.tabBarItem.image = UIImage(systemName: "books.vertical")
+		return courseViewController
 	}()
 	
 	private let communityViewController: CommunityViewController = {
@@ -36,15 +36,19 @@ class TabBarController: UITabBarController {
 	}
 	
 	private func configure() {
-		let reviewNavigationController = UINavigationController(rootViewController: reviewViewController)
+		let courseNavigationController = UINavigationController(rootViewController: courseViewController)
 		let communityNavigationController = UINavigationController(rootViewController: communityViewController)
 		let myInfoNavigationController = UINavigationController(rootViewController: myInfoViewController)
 		
-		self.setViewControllers([
-			reviewNavigationController,
+		setupViewControllers([
+			courseNavigationController,
 			communityNavigationController,
 			myInfoNavigationController
-		], animated: false)
+		])
+	}
+	
+	private func setupViewControllers(_ viewControllers: [UIViewController]) {
+		self.setViewControllers(viewControllers, animated: false)
 	}
 	
 }

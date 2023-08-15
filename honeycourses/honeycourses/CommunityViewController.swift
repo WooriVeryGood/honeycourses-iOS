@@ -7,10 +7,16 @@
 
 import UIKit
 
-class CommunityViewController: UIViewController {
+final class CommunityViewController: BaseViewController {
+	
+	private lazy var communityView = CommunityView(controller: self)
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+	}
+	
+	override func loadView() {
+		self.view = communityView
 	}
 	
 }
