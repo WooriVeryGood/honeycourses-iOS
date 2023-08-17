@@ -26,10 +26,19 @@ extension CourseViewController {
 	@objc func loadData() {
 		courseView.startLoading()
 		// TODO: tableView 데이터 변경
-		DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-			print("reload done")
-			self.courseView.stopLoading()
-		}
+		CourseServiceImplement(networkManager: NetworkManagerImplement.shared)
+			.requestList { [weak self] result in
+				switch result {
+				case .success(let dataString):
+					print(dataString)
+				case .failure(let error):
+					print("load data fail")
+					print(error.localizedDescription)
+				}
+				DispatchQueue.main.async {
+					self?.courseView.stopLoading()
+				}
+			}
 	}
 }
 
