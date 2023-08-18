@@ -24,11 +24,20 @@
 		94BFFDAB2A8B3200002798D0 /* CommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFDAA2A8B3200002798D0 /* CommunityView.swift */; };
 		94BFFDAD2A8B3276002798D0 /* MyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFDAC2A8B3276002798D0 /* MyInfoView.swift */; };
 		94BFFDB02A8BE514002798D0 /* CourseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFDAF2A8BE514002798D0 /* CourseCategory.swift */; };
-		94BFFDB32A8D28FB002798D0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFDB22A8D28FB002798D0 /* NetworkManager.swift */; };
+		94BFFDB32A8D28FB002798D0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFDB22A8D28FB002798D0 /* NetworkService.swift */; };
 		94BFFDCB2A8D3BBA002798D0 /* CourseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFDCA2A8D3BBA002798D0 /* CourseService.swift */; };
 		94BFFDCD2A8D3CA9002798D0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFDCC2A8D3CA9002798D0 /* NetworkError.swift */; };
 		94BFFDD32A8E786A002798D0 /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 94BFFDD22A8E786A002798D0 /* AWSCognitoAuthPlugin */; };
 		94BFFDD52A8E786A002798D0 /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = 94BFFDD42A8E786A002798D0 /* Amplify */; };
+		94BFFDDA2A8F4581002798D0 /* Authenticator in Frameworks */ = {isa = PBXBuildFile; productRef = 94BFFDD92A8F4581002798D0 /* Authenticator */; };
+		94BFFDE12A8FA72D002798D0 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFDE02A8FA72D002798D0 /* AuthService.swift */; };
+		94BFFDE32A8FAECB002798D0 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFDE22A8FAECB002798D0 /* TokenService.swift */; };
+		94BFFDE52A8FC2D0002798D0 /* CourseServiceImplement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFDE42A8FC2D0002798D0 /* CourseServiceImplement.swift */; };
+		94BFFDE82A8FC35D002798D0 /* AuthServiceImplement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFDE72A8FC35D002798D0 /* AuthServiceImplement.swift */; };
+		94BFFDEA2A8FC397002798D0 /* TokenServiceImplement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFDE92A8FC397002798D0 /* TokenServiceImplement.swift */; };
+		94BFFDED2A8FC3FB002798D0 /* NetworkServiceImplement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFDEC2A8FC3FB002798D0 /* NetworkServiceImplement.swift */; };
+		A87416B6FCCA440D75DA563D /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = F4F4F7F47150A92E840C54DE /* amplifyconfiguration.json */; };
+		EB63F7142367B0E6210EFBD5 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CDCCFBCE4F27AFFAF30345F /* awsconfiguration.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CDCCFBCE4F27AFFAF30345F /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		94BFFD5E2A8A470D002798D0 /* honeycourses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = honeycourses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BFFD612A8A470D002798D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94BFFD632A8A470D002798D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,9 +80,16 @@
 		94BFFDAA2A8B3200002798D0 /* CommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityView.swift; sourceTree = "<group>"; };
 		94BFFDAC2A8B3276002798D0 /* MyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoView.swift; sourceTree = "<group>"; };
 		94BFFDAF2A8BE514002798D0 /* CourseCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCategory.swift; sourceTree = "<group>"; };
-		94BFFDB22A8D28FB002798D0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		94BFFDB22A8D28FB002798D0 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		94BFFDCA2A8D3BBA002798D0 /* CourseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseService.swift; sourceTree = "<group>"; };
 		94BFFDCC2A8D3CA9002798D0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		94BFFDE02A8FA72D002798D0 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		94BFFDE22A8FAECB002798D0 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
+		94BFFDE42A8FC2D0002798D0 /* CourseServiceImplement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseServiceImplement.swift; sourceTree = "<group>"; };
+		94BFFDE72A8FC35D002798D0 /* AuthServiceImplement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceImplement.swift; sourceTree = "<group>"; };
+		94BFFDE92A8FC397002798D0 /* TokenServiceImplement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenServiceImplement.swift; sourceTree = "<group>"; };
+		94BFFDEC2A8FC3FB002798D0 /* NetworkServiceImplement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceImplement.swift; sourceTree = "<group>"; };
+		F4F4F7F47150A92E840C54DE /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +99,7 @@
 			files = (
 				94BFFDD32A8E786A002798D0 /* AWSCognitoAuthPlugin in Frameworks */,
 				94BFFDD52A8E786A002798D0 /* Amplify in Frameworks */,
+				94BFFDDA2A8F4581002798D0 /* Authenticator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		038AB8D3E5860DA130C8CB8C /* AmplifyConfig */ = {
+			isa = PBXGroup;
+			children = (
+				0CDCCFBCE4F27AFFAF30345F /* awsconfiguration.json */,
+				F4F4F7F47150A92E840C54DE /* amplifyconfiguration.json */,
+			);
+			name = AmplifyConfig;
+			sourceTree = "<group>";
+		};
 		94BFFD552A8A470D002798D0 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +136,7 @@
 				94BFFD772A8A470E002798D0 /* honeycoursesTests */,
 				94BFFD812A8A470E002798D0 /* honeycoursesUITests */,
 				94BFFD5F2A8A470D002798D0 /* Products */,
+				038AB8D3E5860DA130C8CB8C /* AmplifyConfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +159,7 @@
 				94BFFD972A8A97D9002798D0 /* Module */,
 				94BFFDAE2A8BE4F3002798D0 /* Model */,
 				94BFFDB12A8D28E3002798D0 /* Network */,
+				94BFFDEB2A8FC3C8002798D0 /* AmplifyServices */,
 				94BFFD962A8A97CB002798D0 /* Resources */,
 			);
 			path = honeycourses;
@@ -222,8 +251,9 @@
 			isa = PBXGroup;
 			children = (
 				94BFFDC92A8D3B95002798D0 /* CourseService */,
-				94BFFDB22A8D28FB002798D0 /* NetworkManager.swift */,
 				94BFFDCC2A8D3CA9002798D0 /* NetworkError.swift */,
+				94BFFDB22A8D28FB002798D0 /* NetworkService.swift */,
+				94BFFDEC2A8FC3FB002798D0 /* NetworkServiceImplement.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -232,8 +262,36 @@
 			isa = PBXGroup;
 			children = (
 				94BFFDCA2A8D3BBA002798D0 /* CourseService.swift */,
+				94BFFDE42A8FC2D0002798D0 /* CourseServiceImplement.swift */,
 			);
 			name = CourseService;
+			sourceTree = "<group>";
+		};
+		94BFFDDF2A8FA715002798D0 /* AuthService */ = {
+			isa = PBXGroup;
+			children = (
+				94BFFDE02A8FA72D002798D0 /* AuthService.swift */,
+				94BFFDE72A8FC35D002798D0 /* AuthServiceImplement.swift */,
+			);
+			name = AuthService;
+			sourceTree = "<group>";
+		};
+		94BFFDE62A8FC2FC002798D0 /* TokenService */ = {
+			isa = PBXGroup;
+			children = (
+				94BFFDE22A8FAECB002798D0 /* TokenService.swift */,
+				94BFFDE92A8FC397002798D0 /* TokenServiceImplement.swift */,
+			);
+			name = TokenService;
+			sourceTree = "<group>";
+		};
+		94BFFDEB2A8FC3C8002798D0 /* AmplifyServices */ = {
+			isa = PBXGroup;
+			children = (
+				94BFFDDF2A8FA715002798D0 /* AuthService */,
+				94BFFDE62A8FC2FC002798D0 /* TokenService */,
+			);
+			name = AmplifyServices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +313,7 @@
 			packageProductDependencies = (
 				94BFFDD22A8E786A002798D0 /* AWSCognitoAuthPlugin */,
 				94BFFDD42A8E786A002798D0 /* Amplify */,
+				94BFFDD92A8F4581002798D0 /* Authenticator */,
 			);
 			productName = honeycourses;
 			productReference = 94BFFD5E2A8A470D002798D0 /* honeycourses.app */;
@@ -330,6 +389,7 @@
 			mainGroup = 94BFFD552A8A470D002798D0;
 			packageReferences = (
 				94BFFDD12A8E786A002798D0 /* XCRemoteSwiftPackageReference "amplify-swift" */,
+				94BFFDD82A8F4581002798D0 /* XCRemoteSwiftPackageReference "amplify-ui-swift-authenticator" */,
 			);
 			productRefGroup = 94BFFD5F2A8A470D002798D0 /* Products */;
 			projectDirPath = "";
@@ -349,6 +409,8 @@
 			files = (
 				94BFFD6E2A8A470E002798D0 /* LaunchScreen.storyboard in Resources */,
 				94BFFD6B2A8A470E002798D0 /* Assets.xcassets in Resources */,
+				EB63F7142367B0E6210EFBD5 /* awsconfiguration.json in Resources */,
+				A87416B6FCCA440D75DA563D /* amplifyconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,16 +439,22 @@
 				94BFFD622A8A470D002798D0 /* AppDelegate.swift in Sources */,
 				94BFFDCB2A8D3BBA002798D0 /* CourseService.swift in Sources */,
 				94BFFDB02A8BE514002798D0 /* CourseCategory.swift in Sources */,
-				94BFFDB32A8D28FB002798D0 /* NetworkManager.swift in Sources */,
+				94BFFDB32A8D28FB002798D0 /* NetworkService.swift in Sources */,
 				94BFFDA92A8B309D002798D0 /* CourseView.swift in Sources */,
+				94BFFDED2A8FC3FB002798D0 /* NetworkServiceImplement.swift in Sources */,
+				94BFFDE12A8FA72D002798D0 /* AuthService.swift in Sources */,
+				94BFFDEA2A8FC397002798D0 /* TokenServiceImplement.swift in Sources */,
 				94BFFD9C2A8A9889002798D0 /* CourseViewController.swift in Sources */,
 				94BFFD9E2A8A98A6002798D0 /* CommunityViewController.swift in Sources */,
 				94BFFDA52A8B2D5B002798D0 /* BaseView.swift in Sources */,
 				94BFFDCD2A8D3CA9002798D0 /* NetworkError.swift in Sources */,
 				94BFFDA72A8B2F13002798D0 /* BaseViewController.swift in Sources */,
+				94BFFDE52A8FC2D0002798D0 /* CourseServiceImplement.swift in Sources */,
+				94BFFDE32A8FAECB002798D0 /* TokenService.swift in Sources */,
 				94BFFDAD2A8B3276002798D0 /* MyInfoView.swift in Sources */,
 				94BFFDA02A8A98BA002798D0 /* MyInfoViewController.swift in Sources */,
 				94BFFDAB2A8B3200002798D0 /* CommunityView.swift in Sources */,
+				94BFFDE82A8FC35D002798D0 /* AuthServiceImplement.swift in Sources */,
 				94BFFD642A8A470D002798D0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,7 +553,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -539,7 +607,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -564,7 +632,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -596,7 +664,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -739,6 +807,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		94BFFDD82A8F4581002798D0 /* XCRemoteSwiftPackageReference "amplify-ui-swift-authenticator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aws-amplify/amplify-ui-swift-authenticator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -751,6 +827,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 94BFFDD12A8E786A002798D0 /* XCRemoteSwiftPackageReference "amplify-swift" */;
 			productName = Amplify;
+		};
+		94BFFDD92A8F4581002798D0 /* Authenticator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 94BFFDD82A8F4581002798D0 /* XCRemoteSwiftPackageReference "amplify-ui-swift-authenticator" */;
+			productName = Authenticator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -7,6 +7,9 @@
 
 import UIKit
 
+import Amplify
+import AWSCognitoAuthPlugin
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,6 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		_ application: UIApplication,
 		didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
 	) -> Bool {
+		do {
+			try Amplify.add(plugin: AWSCognitoAuthPlugin())
+			try Amplify.configure()
+			print("Amplify configured with auth plugin")
+		} catch {
+			print("An error occurred setting up Amplify: \(error)")
+		}
+		
 		return true
 	}
 

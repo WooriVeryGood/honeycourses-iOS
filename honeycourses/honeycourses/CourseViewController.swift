@@ -25,20 +25,18 @@ final class CourseViewController: BaseViewController {
 extension CourseViewController {
 	@objc func loadData() {
 		courseView.startLoading()
+		defer { courseView.stopLoading() }
 		// TODO: tableView 데이터 변경
-		CourseServiceImplement(networkManager: NetworkManagerImplement.shared)
-			.requestList { [weak self] result in
-				switch result {
-				case .success(let dataString):
-					print(dataString)
-				case .failure(let error):
-					print("load data fail")
-					print(error.localizedDescription)
-				}
-				DispatchQueue.main.async {
-					self?.courseView.stopLoading()
-				}
+		Task {
+			guard let token = await TokenServiceImplement.shared.idToken()
+			else {
+				return
 			}
+			if let dataString = await CourseServiceImplement(networkService: NetworkServiceImplement.shared)
+				.requestList(token: token) {
+				print(dataString)
+			}
+		}
 	}
 }
 
