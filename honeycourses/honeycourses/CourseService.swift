@@ -8,5 +8,6 @@
 import Foundation
 
 protocol CourseService {
+	@discardableResult
 	func requestList(token: String) async -> String?
 }

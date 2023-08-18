@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94A509252A8FCE97002087F7 /* CourseServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A509242A8FCE97002087F7 /* CourseServiceTests.swift */; };
+		94A509282A8FD10C002087F7 /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = 94A509272A8FD10C002087F7 /* Amplify */; };
+		94A5092A2A8FD115002087F7 /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 94A509292A8FD115002087F7 /* AWSCognitoAuthPlugin */; };
+		94A5092D2A8FD66C002087F7 /* NetworkServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5092C2A8FD66C002087F7 /* NetworkServiceSpy.swift */; };
+		94A509302A8FD785002087F7 /* CourseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5092F2A8FD785002087F7 /* CourseViewControllerTests.swift */; };
+		94A509322A8FD83F002087F7 /* CourseServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A509312A8FD83F002087F7 /* CourseServiceSpy.swift */; };
 		94BFFD622A8A470D002798D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFD612A8A470D002798D0 /* AppDelegate.swift */; };
 		94BFFD642A8A470D002798D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFD632A8A470D002798D0 /* SceneDelegate.swift */; };
 		94BFFD6B2A8A470E002798D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94BFFD6A2A8A470E002798D0 /* Assets.xcassets */; };
 		94BFFD6E2A8A470E002798D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94BFFD6C2A8A470E002798D0 /* LaunchScreen.storyboard */; };
-		94BFFD792A8A470E002798D0 /* honeycoursesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFD782A8A470E002798D0 /* honeycoursesTests.swift */; };
 		94BFFD832A8A470E002798D0 /* honeycoursesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFD822A8A470E002798D0 /* honeycoursesUITests.swift */; };
 		94BFFD852A8A470E002798D0 /* honeycoursesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFD842A8A470E002798D0 /* honeycoursesUITestsLaunchTests.swift */; };
 		94BFFD942A8A9714002798D0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFD932A8A9714002798D0 /* TabBarController.swift */; };
@@ -59,6 +64,10 @@
 
 /* Begin PBXFileReference section */
 		0CDCCFBCE4F27AFFAF30345F /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		94A509242A8FCE97002087F7 /* CourseServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseServiceTests.swift; sourceTree = "<group>"; };
+		94A5092C2A8FD66C002087F7 /* NetworkServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceSpy.swift; sourceTree = "<group>"; };
+		94A5092F2A8FD785002087F7 /* CourseViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewControllerTests.swift; sourceTree = "<group>"; };
+		94A509312A8FD83F002087F7 /* CourseServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseServiceSpy.swift; sourceTree = "<group>"; };
 		94BFFD5E2A8A470D002798D0 /* honeycourses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = honeycourses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BFFD612A8A470D002798D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94BFFD632A8A470D002798D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +75,6 @@
 		94BFFD6D2A8A470E002798D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94BFFD6F2A8A470E002798D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94BFFD742A8A470E002798D0 /* honeycoursesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = honeycoursesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		94BFFD782A8A470E002798D0 /* honeycoursesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = honeycoursesTests.swift; sourceTree = "<group>"; };
 		94BFFD7E2A8A470E002798D0 /* honeycoursesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = honeycoursesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BFFD822A8A470E002798D0 /* honeycoursesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = honeycoursesUITests.swift; sourceTree = "<group>"; };
 		94BFFD842A8A470E002798D0 /* honeycoursesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = honeycoursesUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -107,6 +115,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94A509282A8FD10C002087F7 /* Amplify in Frameworks */,
+				94A5092A2A8FD115002087F7 /* AWSCognitoAuthPlugin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +139,38 @@
 			name = AmplifyConfig;
 			sourceTree = "<group>";
 		};
+		94A509232A8FCE8B002087F7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				94A509242A8FCE97002087F7 /* CourseServiceTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		94A509262A8FD10C002087F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94A5092B2A8FD65A002087F7 /* Spy */ = {
+			isa = PBXGroup;
+			children = (
+				94A509312A8FD83F002087F7 /* CourseServiceSpy.swift */,
+				94A5092C2A8FD66C002087F7 /* NetworkServiceSpy.swift */,
+			);
+			path = Spy;
+			sourceTree = "<group>";
+		};
+		94A5092E2A8FD767002087F7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				94A5092F2A8FD785002087F7 /* CourseViewControllerTests.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		94BFFD552A8A470D002798D0 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +179,7 @@
 				94BFFD812A8A470E002798D0 /* honeycoursesUITests */,
 				94BFFD5F2A8A470D002798D0 /* Products */,
 				038AB8D3E5860DA130C8CB8C /* AmplifyConfig */,
+				94A509262A8FD10C002087F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,7 +211,9 @@
 		94BFFD772A8A470E002798D0 /* honeycoursesTests */ = {
 			isa = PBXGroup;
 			children = (
-				94BFFD782A8A470E002798D0 /* honeycoursesTests.swift */,
+				94A5092B2A8FD65A002087F7 /* Spy */,
+				94A5092E2A8FD767002087F7 /* ViewControllers */,
+				94A509232A8FCE8B002087F7 /* Services */,
 			);
 			path = honeycoursesTests;
 			sourceTree = "<group>";
@@ -333,6 +378,10 @@
 				94BFFD762A8A470E002798D0 /* PBXTargetDependency */,
 			);
 			name = honeycoursesTests;
+			packageProductDependencies = (
+				94A509272A8FD10C002087F7 /* Amplify */,
+				94A509292A8FD115002087F7 /* AWSCognitoAuthPlugin */,
+			);
 			productName = honeycoursesTests;
 			productReference = 94BFFD742A8A470E002798D0 /* honeycoursesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -463,7 +512,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94BFFD792A8A470E002798D0 /* honeycoursesTests.swift in Sources */,
+				94A509302A8FD785002087F7 /* CourseViewControllerTests.swift in Sources */,
+				94A509252A8FCE97002087F7 /* CourseServiceTests.swift in Sources */,
+				94A5092D2A8FD66C002087F7 /* NetworkServiceSpy.swift in Sources */,
+				94A509322A8FD83F002087F7 /* CourseServiceSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,13 +742,16 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6VYPR8MZ57;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = WooriVeryGood.honeycoursesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/honeycourses.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/honeycourses";
 			};
 			name = Debug;
@@ -710,13 +765,16 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6VYPR8MZ57;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = WooriVeryGood.honeycoursesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/honeycourses.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/honeycourses";
 			};
 			name = Release;
@@ -732,9 +790,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = WooriVeryGood.honeycoursesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = honeycourses;
 			};
 			name = Debug;
@@ -750,9 +811,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = WooriVeryGood.honeycoursesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = honeycourses;
 			};
 			name = Release;
@@ -818,6 +882,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		94A509272A8FD10C002087F7 /* Amplify */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 94BFFDD12A8E786A002798D0 /* XCRemoteSwiftPackageReference "amplify-swift" */;
+			productName = Amplify;
+		};
+		94A509292A8FD115002087F7 /* AWSCognitoAuthPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 94BFFDD12A8E786A002798D0 /* XCRemoteSwiftPackageReference "amplify-swift" */;
+			productName = AWSCognitoAuthPlugin;
+		};
 		94BFFDD22A8E786A002798D0 /* AWSCognitoAuthPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 94BFFDD12A8E786A002798D0 /* XCRemoteSwiftPackageReference "amplify-swift" */;

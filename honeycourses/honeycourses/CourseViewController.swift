@@ -11,6 +11,9 @@ final class CourseViewController: BaseViewController {
 	
 	private lazy var courseView = CourseView(controller: self)
 	
+	var _courseService: CourseService?
+	var _tokenService: TokenService?
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		loadData()
@@ -26,17 +29,17 @@ extension CourseViewController {
 	@objc func loadData() {
 		courseView.startLoading()
 		defer { courseView.stopLoading() }
-		// TODO: tableView 데이터 변경
+		
 		Task {
-			guard let token = await TokenServiceImplement.shared.idToken()
-			else {
-				return
-			}
-			if let dataString = await CourseServiceImplement(networkService: NetworkServiceImplement.shared)
-				.requestList(token: token) {
+			guard let token = await _tokenService?.idToken()else {return}
+			if let dataString = await requestCourseLists(token: token) {
 				print(dataString)
 			}
 		}
+	}
+	
+	func requestCourseLists(token: String) async -> String? {
+		return await _courseService?.requestList(token: token)
 	}
 }
 

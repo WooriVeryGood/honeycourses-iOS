@@ -15,6 +15,7 @@ final class CourseServiceImplement: CourseService {
 		self.networkService = networkService
 	}
 	
+	@discardableResult
 	func requestList(token: String) async -> String? {
 		guard let data = await networkService.request(queryString: "/courses", token: token)
 		else { return nil }

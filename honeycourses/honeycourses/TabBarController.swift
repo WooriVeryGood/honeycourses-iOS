@@ -33,6 +33,7 @@ final class TabBarController: UITabBarController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configure()
+		setServices()
 	}
 	
 	private func configure() {
@@ -49,6 +50,12 @@ final class TabBarController: UITabBarController {
 	
 	private func setupViewControllers(_ viewControllers: [UIViewController]) {
 		self.setViewControllers(viewControllers, animated: false)
+	}
+	
+	private func setServices() {
+		let networkService = NetworkServiceImplement.shared
+		courseViewController._courseService = CourseServiceImplement(networkService: networkService)
+		courseViewController._tokenService = TokenServiceImplement.shared
 	}
 	
 }
