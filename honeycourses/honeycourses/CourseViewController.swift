@@ -9,10 +9,7 @@ import UIKit
 
 final class CourseViewController: BaseViewController {
 	
-	private lazy var _courseView = CourseView(controller: self)
-	var courseView: CourseView {
-		get { _courseView }
-	}
+	lazy var courseView = CourseView(controller: self)
 	
 	var courseService: CourseService?
 	var tokenService: TokenService?
@@ -68,8 +65,11 @@ extension CourseViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = UITableViewCell()
-		cell.textLabel?.text = courses?[indexPath.row].name ?? "none"
+		guard let cell = tableView
+			.dequeueReusableCell(withIdentifier: CourseTableViewCell.identifier) as? CourseTableViewCell,
+					let courses
+		else { return CourseTableViewCell() }
+		cell.bind(courses[indexPath.row])
 		return cell
 	}
 	

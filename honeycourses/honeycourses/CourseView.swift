@@ -24,14 +24,11 @@ final class CourseView: BaseView<CourseViewController> {
 		return searchController
 	}()
 	
-	private let _tableView: UITableView = {
+	let tableView: UITableView = {
 		let tableView = UITableView()
 		tableView.translatesAutoresizingMaskIntoConstraints = false
 		return tableView
 	}()
-	var tableView: UITableView {
-		get { _tableView }
-	}
 	
 	override func setupUI() {
 		self.backgroundColor = .white
@@ -44,6 +41,8 @@ final class CourseView: BaseView<CourseViewController> {
 	override func setupBinding() {
 		tableView.delegate = controller
 		tableView.dataSource = controller
+		
+		tableView.register(CourseTableViewCell.self, forCellReuseIdentifier: CourseTableViewCell.identifier)
 		
 		tableView.refreshControl?.addTarget(
 			controller,

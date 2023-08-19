@@ -13,7 +13,7 @@ final class CourseServiceSpy: CourseService {
 	var token: String?
 	var urlString: String?
 	
-	@Published private(set) var requestListIsCalled = false
+	@Published private(set) var requestCoursesIsCalled = false
 	
 	private let dummyCourses = [
 		Course(id: 1, name: "计算机系统导论", category: .major, isYouguan: false, credit: 5, department: "信息科学技术学院"),
@@ -22,7 +22,7 @@ final class CourseServiceSpy: CourseService {
 	]
 	
 	func requestCourses(token: String) async -> Courses? {
-		requestListIsCalled = true
+		requestCoursesIsCalled = true
 		urlString = "https://api.honeycourses.com/courses"
 		self.token = token
 		return dummyCourses

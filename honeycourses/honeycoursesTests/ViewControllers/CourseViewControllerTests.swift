@@ -46,18 +46,36 @@ final class CourseViewControllerTests: XCTestCase {
 	}
 	
 	@MainActor
-	func test_tableViewConfigureCell() async {
+	func test_tableViewConfigureCell_Not_isYouguan() async {
 		await requestCourses()
 
 		let tableView = viewController?.courseView.tableView
-		let cell = tableView?.cellForRow(at: IndexPath(row: 0, section: 0))
-		XCTAssertEqual(cell?.textLabel?.text, "计算机系统导论")
+		let cell = tableView?.cellForRow(at: IndexPath(row: 0, section: 0)) as? CourseTableViewCell
+		XCTAssertEqual(cell?.nameLabel.text, "计算机系统导论")
+		XCTAssertEqual(cell?.creditLabel.text, "5점")
+		XCTAssertEqual(cell?.categoryLabel.text, "专业课")
+		XCTAssertEqual(cell?.departmentLabel.text, "信息科学技术学院")
+		XCTAssertEqual(cell?.youguanLabel.isHidden, true)
+		XCTAssertEqual(cell?.youguanLabel.text, "")
+	}
+	
+	@MainActor
+	func test_tableViewConfigureCell_isYouguan() async {
+		await requestCourses()
+		
+		let tableView = viewController?.courseView.tableView
+		let cell = tableView?
+			.dataSource?
+			.tableView(tableView!, cellForRowAt: IndexPath(row: 1, section: 0)) as? CourseTableViewCell
+		
+		XCTAssertEqual(cell?.youguanLabel.isHidden, false)
+		XCTAssertEqual(cell?.youguanLabel.text, "中国有关")
 	}
 	
 	@MainActor
 	private func requestCourses() async {
 		let expectation = XCTestExpectation(description: "Request data asynchronously.")
-		courseService?.$requestListIsCalled
+		courseService?.$requestCoursesIsCalled
 			.sink { isCalled in
 				if isCalled {
 					expectation.fulfill()

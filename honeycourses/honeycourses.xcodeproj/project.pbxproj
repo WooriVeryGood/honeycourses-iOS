@@ -17,6 +17,7 @@
 		94A509362A8FE12C002087F7 /* CourseListCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A509352A8FE12C002087F7 /* CourseListCategory.swift */; };
 		94A5093B2A8FE29C002087F7 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5093A2A8FE29C002087F7 /* Course.swift */; };
 		94A509422A907D4F002087F7 /* TokenServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A509412A907D4F002087F7 /* TokenServiceStub.swift */; };
+		94A509442A9114B5002087F7 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A509432A9114B5002087F7 /* CourseTableViewCell.swift */; };
 		94BFFD622A8A470D002798D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFD612A8A470D002798D0 /* AppDelegate.swift */; };
 		94BFFD642A8A470D002798D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFD632A8A470D002798D0 /* SceneDelegate.swift */; };
 		94BFFD6B2A8A470E002798D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94BFFD6A2A8A470E002798D0 /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		94A5093A2A8FE29C002087F7 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		94A5093D2A8FE989002087F7 /* honeycourses.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = honeycourses.xctestplan; sourceTree = "<group>"; };
 		94A509412A907D4F002087F7 /* TokenServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenServiceStub.swift; sourceTree = "<group>"; };
+		94A509432A9114B5002087F7 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 		94BFFD5E2A8A470D002798D0 /* honeycourses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = honeycourses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BFFD612A8A470D002798D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94BFFD632A8A470D002798D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 		94BFFD982A8A980C002798D0 /* Course */ = {
 			isa = PBXGroup;
 			children = (
+				94A509432A9114B5002087F7 /* CourseTableViewCell.swift */,
 				94BFFDA82A8B309D002798D0 /* CourseView.swift */,
 				94BFFD9B2A8A9889002798D0 /* CourseViewController.swift */,
 			);
@@ -536,6 +539,7 @@
 				94BFFD9E2A8A98A6002798D0 /* CommunityViewController.swift in Sources */,
 				94BFFDA52A8B2D5B002798D0 /* BaseView.swift in Sources */,
 				94A509342A8FDE0F002087F7 /* CourseDTO.swift in Sources */,
+				94A509442A9114B5002087F7 /* CourseTableViewCell.swift in Sources */,
 				94BFFDCD2A8D3CA9002798D0 /* NetworkError.swift in Sources */,
 				94BFFDA72A8B2F13002798D0 /* BaseViewController.swift in Sources */,
 				94A509362A8FE12C002087F7 /* CourseListCategory.swift in Sources */,
