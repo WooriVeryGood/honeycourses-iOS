@@ -1,0 +1,46 @@
+{
+  "configurations" : [
+    {
+      "id" : "D21CB7DC-C788-48E0-ADBD-D30E97F89A01",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:honeycourses.xcodeproj",
+          "identifier" : "94BFFD5D2A8A470D002798D0",
+          "name" : "honeycourses"
+        }
+      ]
+    },
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:honeycourses.xcodeproj",
+      "identifier" : "94BFFD5D2A8A470D002798D0",
+      "name" : "honeycourses"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:honeycourses.xcodeproj",
+        "identifier" : "94BFFD732A8A470E002798D0",
+        "name" : "honeycoursesTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:honeycourses.xcodeproj",
+        "identifier" : "94BFFD7D2A8A470E002798D0",
+        "name" : "honeycoursesUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

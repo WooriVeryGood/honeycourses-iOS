@@ -7,10 +7,16 @@
 
 import UIKit
 
-class MyInfoViewController: UIViewController {
+final class MyInfoViewController: BaseViewController {
+	
+	private lazy var myInfoView = MyInfoView(controller: self)
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+	}
+	
+	override func loadView() {
+		self.view = myInfoView
 	}
 	
 }
