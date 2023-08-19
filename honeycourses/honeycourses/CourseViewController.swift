@@ -9,10 +9,15 @@ import UIKit
 
 final class CourseViewController: BaseViewController {
 	
-	private lazy var courseView = CourseView(controller: self)
+	private lazy var _courseView = CourseView(controller: self)
+	var courseView: CourseView {
+		get { _courseView }
+	}
 	
-	var _courseService: CourseService?
-	var _tokenService: TokenService?
+	var courseService: CourseService?
+	var tokenService: TokenService?
+	
+	private var courses: Courses?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -28,25 +33,24 @@ final class CourseViewController: BaseViewController {
 extension CourseViewController {
 	@objc func loadData() {
 		courseView.startLoading()
-		defer { courseView.stopLoading() }
 		
 		Task {
-			guard let token = await _tokenService?.idToken()else {return}
-			if let dataString = await requestCourseLists(token: token) {
-				print(dataString)
-			}
+			self.courses = await requestCourses()
+			courseView.stopLoading()
 		}
 	}
 	
-	func requestCourseLists(token: String) async -> String? {
-		return await _courseService?.requestList(token: token)
+	private func requestCourses() async -> Courses {
+		guard let token = await tokenService?.idToken() else { return [] }
+		guard let courses = await courseService?.requestCourses(token: token) else { return [] }
+		return courses
 	}
 }
 
 extension CourseViewController {
-	func courseCategoryMenuDidTap(_ courseCategory: CourseCategory) {
+	func courseListCategoryMenuDidTap(_ courseListCategory: CourseListCategory) {
 		// TODO: tableView 데이터 변경
-		print("\(courseCategory.title) did tap")
+		print("\(courseListCategory.title) did tap")
 	}
 }
 
@@ -60,12 +64,12 @@ extension CourseViewController {
 extension CourseViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 100
+		return courses?.count ?? 0
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell()
-		cell.textLabel?.text = "\(indexPath.row)"
+		cell.textLabel?.text = courses?[indexPath.row].name ?? "none"
 		return cell
 	}
 	

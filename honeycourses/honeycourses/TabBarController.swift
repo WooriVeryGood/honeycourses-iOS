@@ -54,8 +54,8 @@ final class TabBarController: UITabBarController {
 	
 	private func setServices() {
 		let networkService = NetworkServiceImplement.shared
-		courseViewController._courseService = CourseServiceImplement(networkService: networkService)
-		courseViewController._tokenService = TokenServiceImplement.shared
+		courseViewController.courseService = CourseServiceImplement(networkService: networkService)
+		courseViewController.tokenService = TokenServiceImplement.shared
 	}
 	
 }

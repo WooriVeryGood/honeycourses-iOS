@@ -16,11 +16,11 @@ final class CourseServiceImplement: CourseService {
 	}
 	
 	@discardableResult
-	func requestList(token: String) async -> String? {
+	func requestCourses(token: String) async -> Courses? {
 		guard let data = await networkService.request(queryString: "/courses", token: token)
 		else { return nil }
 		
-		return String(data: data, encoding: .utf8)
+		return try? JSONDecoder().decode([CourseDTO].self, from: data).map { $0.toDomain() }
 	}
 	
 }

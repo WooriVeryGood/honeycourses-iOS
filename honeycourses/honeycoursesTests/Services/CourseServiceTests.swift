@@ -9,17 +9,29 @@ import XCTest
 @testable import honeycourses
 
 final class CourseServiceTests: XCTestCase {
+	
+	private var networkService: NetworkServiceSpy?
+	private var service: CourseService?
+	
+	override func setUpWithError() throws {
+		try super.setUpWithError()
+		networkService = NetworkServiceSpy()
+		service = CourseServiceImplement(networkService: networkService!)
+	}
+	
+	override func tearDownWithError() throws {
+		try super.tearDownWithError()
+		networkService = nil
+		service = nil
+	}
+	
 	func test_requestList() async {
-		// given
-		let networkServiceSpy = NetworkServiceSpy()
-		let service = CourseServiceImplement(networkService: networkServiceSpy)
-		
 		// when
-		await service.requestList(token: "dummy token")
+		await service?.requestCourses(token: "dummy token")
 		
 		// then
-		XCTAssertEqual(networkServiceSpy.token, "dummy token")
-		XCTAssertEqual(networkServiceSpy.urlString, "https://api.honeycourses.com/courses")
+		XCTAssertEqual(networkService?.token, "dummy token")
+		XCTAssertEqual(networkService?.urlString, "https://api.honeycourses.com/courses")
 	}
 	
 	

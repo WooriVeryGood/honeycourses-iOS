@@ -7,13 +7,14 @@
 
 import UIKit
 
+@MainActor
 final class CourseView: BaseView<CourseViewController> {
 	
-	private var currentCourseCategory = CourseCategory.all
+	private var currentCourseListCategory = CourseListCategory.all
 	
-	private lazy var courseCategoryLabel: UILabel = {
+	private lazy var courseListCategoryLabel: UILabel = {
 		let label = UILabel()
-		label.text = currentCourseCategory.title
+		label.text = currentCourseListCategory.title
 		return label
 	}()
 	
@@ -23,11 +24,14 @@ final class CourseView: BaseView<CourseViewController> {
 		return searchController
 	}()
 	
-	private let tableView: UITableView = {
+	private let _tableView: UITableView = {
 		let tableView = UITableView()
 		tableView.translatesAutoresizingMaskIntoConstraints = false
 		return tableView
 	}()
+	var tableView: UITableView {
+		get { _tableView }
+	}
 	
 	override func setupUI() {
 		self.backgroundColor = .white
@@ -51,7 +55,7 @@ final class CourseView: BaseView<CourseViewController> {
 	private func setupLeftBarButtonItem() {
 		let itemView = leftBarButtonItemView()
 		let button = leftBarButtonItemCustomView(itemView: itemView)
-		button.menu = courseCategoryMenu()
+		button.menu = courseListCategoryMenu()
 		button.showsMenuAsPrimaryAction = true
 		controller?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
 	}
@@ -95,10 +99,10 @@ final class CourseView: BaseView<CourseViewController> {
 }
 
 extension CourseView {
-	private func courseCategoryMenu() -> UIMenu {
-		let actions = CourseCategory.allCases.map { courseCategory in
-			UIAction(title: courseCategory.title) { _ in
-				self.changeCurrentCourseCategory(courseCategory)
+	private func courseListCategoryMenu() -> UIMenu {
+		let actions = CourseListCategory.allCases.map { courseListCategory in
+			UIAction(title: courseListCategory.title) { _ in
+				self.changeCurrentListCourseCategory(courseListCategory)
 			}
 		}
 		return UIMenu(children: actions)
@@ -108,7 +112,7 @@ extension CourseView {
 		let stackView = containerStackView()
 		let imageView = UIImageView(image: UIImage(systemName: "chevron.down"))
 		imageView.tintColor = .label
-		[courseCategoryLabel, imageView].forEach {
+		[courseListCategoryLabel, imageView].forEach {
 			stackView.addArrangedSubview($0)
 		}
 		return stackView
@@ -136,9 +140,9 @@ extension CourseView {
 		return button
 	}
 	
-	private func changeCurrentCourseCategory(_ courseCategory: CourseCategory) {
-		currentCourseCategory = courseCategory
-		courseCategoryLabel.text = courseCategory.title
-		controller?.courseCategoryMenuDidTap(courseCategory)
+	private func changeCurrentListCourseCategory(_ courseListCategory: CourseListCategory) {
+		currentCourseListCategory = courseListCategory
+		courseListCategoryLabel.text = courseListCategory.title
+		controller?.courseListCategoryMenuDidTap(courseListCategory)
 	}
 }
