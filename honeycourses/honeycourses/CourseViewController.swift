@@ -14,7 +14,10 @@ final class CourseViewController: BaseViewController {
 	var courseService: CourseService?
 	var tokenService: TokenService?
 	
-	private var courses: Courses?
+	private(set) var currentCourses: Courses?
+	private var courses: Courses? {
+		didSet { self.currentCourses = self.courses }
+	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -28,12 +31,16 @@ final class CourseViewController: BaseViewController {
 }
 
 extension CourseViewController {
+	// 수업 목록을 갱신하는 메서드
+	// 2개의 상황이 있을 수 있어요.
+	// 1. CourseListCategory가 All일 경우
+	// 2. CourseListCategory가 All이 아닐 경우
 	@objc func loadData() {
 		courseView.startLoading()
 		
 		Task {
 			self.courses = await requestCourses()
-			courseView.stopLoading()
+			courseView.changeCurrentListCourseCategory(.all)
 		}
 	}
 	
@@ -46,8 +53,9 @@ extension CourseViewController {
 
 extension CourseViewController {
 	func courseListCategoryMenuDidTap(_ courseListCategory: CourseListCategory) {
-		// TODO: tableView 데이터 변경
-		print("\(courseListCategory.title) did tap")
+		courseView.startLoading()
+		currentCourses = courses?.filtered(by: courseListCategory)
+		courseView.stopLoading()
 	}
 }
 
@@ -61,15 +69,15 @@ extension CourseViewController {
 extension CourseViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return courses?.count ?? 0
+		return currentCourses?.count ?? 0
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView
 			.dequeueReusableCell(withIdentifier: CourseTableViewCell.identifier) as? CourseTableViewCell,
-					let courses
+					let currentCourses
 		else { return CourseTableViewCell() }
-		cell.bind(courses[indexPath.row])
+		cell.bind(currentCourses[indexPath.row])
 		return cell
 	}
 	

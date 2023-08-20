@@ -17,3 +17,16 @@ struct Course {
 }
 
 typealias Courses = [Course]
+
+extension Courses {
+	func filtered(by courseListCategory: CourseListCategory) -> Self {
+		return self.filter {
+			if courseListCategory == .china {
+				return $0.isYouguan
+			} else if courseListCategory == .all {
+				return true
+			}
+			return $0.category.title == courseListCategory.title
+		}
+	}
+}

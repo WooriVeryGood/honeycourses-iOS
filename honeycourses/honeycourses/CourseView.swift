@@ -24,6 +24,12 @@ final class CourseView: BaseView<CourseViewController> {
 		return searchController
 	}()
 	
+	var isLoading: Bool {
+		get {
+			tableView.refreshControl?.isRefreshing ?? true
+		}
+	}
+	
 	let tableView: UITableView = {
 		let tableView = UITableView()
 		tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -87,12 +93,16 @@ final class CourseView: BaseView<CourseViewController> {
 	}
 	
 	func startLoading() {
-		// TODO: TableViewCell 스켈레톤
+		if !isLoading {
+			// TODO: TableViewCell 스켈레톤
+		}
 	}
 	
 	func stopLoading() {
-		tableView.refreshControl?.endRefreshing()
-		tableView.reloadData()
+		if isLoading {
+			tableView.refreshControl?.endRefreshing()
+			tableView.reloadData()
+		}
 	}
 	
 }
@@ -139,7 +149,7 @@ extension CourseView {
 		return button
 	}
 	
-	private func changeCurrentListCourseCategory(_ courseListCategory: CourseListCategory) {
+	func changeCurrentListCourseCategory(_ courseListCategory: CourseListCategory) {
 		currentCourseListCategory = courseListCategory
 		courseListCategoryLabel.text = courseListCategory.title
 		controller?.courseListCategoryMenuDidTap(courseListCategory)

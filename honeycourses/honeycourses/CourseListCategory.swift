@@ -5,7 +5,7 @@
 //  Created by pagh on 2023/08/19.
 //
 
-enum CourseListCategory: CaseIterable {
+enum CourseListCategory: String, CaseIterable {
 	case all
 	case elective
 	case sports

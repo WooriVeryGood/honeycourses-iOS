@@ -67,9 +67,63 @@ final class CourseViewControllerTests: XCTestCase {
 		let cell = tableView?
 			.dataSource?
 			.tableView(tableView!, cellForRowAt: IndexPath(row: 1, section: 0)) as? CourseTableViewCell
-		
 		XCTAssertEqual(cell?.youguanLabel.isHidden, false)
 		XCTAssertEqual(cell?.youguanLabel.text, "中国有关")
+	}
+	
+	@MainActor
+	func test_courseListCategoryMenuDidTap_all() async {
+		await requestCourses()
+		
+		viewController?.courseListCategoryMenuDidTap(.all)
+		
+		// Test count
+		XCTAssertEqual(viewController?.currentCourses?.count, 3)
+	}
+	
+	@MainActor
+	func test_courseListCategoryMenuDidTap_major() async {
+		await requestCourses()
+		
+		viewController?.courseListCategoryMenuDidTap(.major)
+		
+		// Test count
+		XCTAssertEqual(viewController?.currentCourses?.count, 2)
+		// Test course
+		let tableView = viewController?.courseView.tableView
+		let cell = tableView?.cellForRow(at: IndexPath(row: 0, section: 0)) as? CourseTableViewCell
+		XCTAssertEqual(cell?.nameLabel.text, "计算机系统导论")
+		XCTAssertEqual(cell?.categoryLabel.text, "专业课")
+	}
+	
+	@MainActor
+	func test_courseListCategoryMenuDidTap_elective() async {
+		await requestCourses()
+		
+		viewController?.courseListCategoryMenuDidTap(.elective)
+		
+		// Test count
+		XCTAssertEqual(viewController?.currentCourses?.count, 1)
+		// Test course
+		let tableView = viewController?.courseView.tableView
+		let cell = tableView?.cellForRow(at: IndexPath(row: 0, section: 0)) as? CourseTableViewCell
+		XCTAssertEqual(cell?.nameLabel.text, "社会性别研究")
+		XCTAssertEqual(cell?.categoryLabel.text, "通选课")
+	}
+	
+	@MainActor
+	func test_courseListCategoryMenuDidTap_china() async {
+		await requestCourses()
+		
+		viewController?.courseListCategoryMenuDidTap(.china)
+		
+		// Test count
+		XCTAssertEqual(viewController?.currentCourses?.count, 1)
+		// Test course
+		let tableView = viewController?.courseView.tableView
+		let cell = tableView?.cellForRow(at: IndexPath(row: 0, section: 0)) as? CourseTableViewCell
+		XCTAssertEqual(cell?.nameLabel.text, "中国历史文选B（上）")
+//		XCTAssertEqual(cell?.youguanLabel, "通选课")
 	}
 	
 	@MainActor
