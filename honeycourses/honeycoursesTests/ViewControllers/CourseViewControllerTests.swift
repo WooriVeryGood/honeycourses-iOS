@@ -50,10 +50,12 @@ final class CourseViewControllerTests: XCTestCase {
 		await requestCourses()
 
 		let tableView = viewController?.courseView.tableView
-		let cell = tableView?.cellForRow(at: IndexPath(row: 0, section: 0)) as? CourseTableViewCell
+		let cell = tableView?
+			.dataSource?
+			.tableView(tableView!, cellForRowAt: IndexPath(row: 0, section: 0)) as? CourseTableViewCell
 		XCTAssertEqual(cell?.nameLabel.text, "计算机系统导论")
 		XCTAssertEqual(cell?.creditLabel.text, "5점")
-		XCTAssertEqual(cell?.categoryLabel.text, "专业课")
+		XCTAssertEqual(cell?.categoryLabel.text, "专业")
 		XCTAssertEqual(cell?.departmentLabel.text, "信息科学技术学院")
 		XCTAssertEqual(cell?.youguanLabel.isHidden, true)
 		XCTAssertEqual(cell?.youguanLabel.text, "")
@@ -91,9 +93,11 @@ final class CourseViewControllerTests: XCTestCase {
 		XCTAssertEqual(viewController?.currentCourses?.count, 2)
 		// Test course
 		let tableView = viewController?.courseView.tableView
-		let cell = tableView?.cellForRow(at: IndexPath(row: 0, section: 0)) as? CourseTableViewCell
+		let cell = tableView?
+			.dataSource?
+			.tableView(tableView!, cellForRowAt: IndexPath(row: 0, section: 0)) as? CourseTableViewCell
 		XCTAssertEqual(cell?.nameLabel.text, "计算机系统导论")
-		XCTAssertEqual(cell?.categoryLabel.text, "专业课")
+		XCTAssertEqual(cell?.categoryLabel.text, "专业")
 	}
 	
 	@MainActor
@@ -106,9 +110,11 @@ final class CourseViewControllerTests: XCTestCase {
 		XCTAssertEqual(viewController?.currentCourses?.count, 1)
 		// Test course
 		let tableView = viewController?.courseView.tableView
-		let cell = tableView?.cellForRow(at: IndexPath(row: 0, section: 0)) as? CourseTableViewCell
+		let cell = tableView?
+			.dataSource?
+			.tableView(tableView!, cellForRowAt: IndexPath(row: 0, section: 0)) as? CourseTableViewCell
 		XCTAssertEqual(cell?.nameLabel.text, "社会性别研究")
-		XCTAssertEqual(cell?.categoryLabel.text, "通选课")
+		XCTAssertEqual(cell?.categoryLabel.text, "通选")
 	}
 	
 	@MainActor
@@ -121,9 +127,11 @@ final class CourseViewControllerTests: XCTestCase {
 		XCTAssertEqual(viewController?.currentCourses?.count, 1)
 		// Test course
 		let tableView = viewController?.courseView.tableView
-		let cell = tableView?.cellForRow(at: IndexPath(row: 0, section: 0)) as? CourseTableViewCell
+		let cell = tableView?
+			.dataSource?
+			.tableView(tableView!, cellForRowAt: IndexPath(row: 0, section: 0)) as? CourseTableViewCell
 		XCTAssertEqual(cell?.nameLabel.text, "中国历史文选B（上）")
-//		XCTAssertEqual(cell?.youguanLabel, "通选课")
+		XCTAssertEqual(cell?.youguanLabel.text, "中国有关")
 	}
 	
 	@MainActor
