@@ -81,4 +81,20 @@ extension CourseViewController: UITableViewDelegate, UITableViewDataSource {
 		return cell
 	}
 	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		guard let course = currentCourses?[indexPath.row] else { return }
+		routeToCourseReview(course)
+	}
+	
+}
+
+extension CourseViewController {
+	func routeToCourseReview(_ course: Course) {
+		let courseReviewController = CourseReviewViewController()
+		let courseReviewService = CourseReviewServiceImplement(networkService: NetworkServiceImplement.shared)
+		courseReviewController.courseReviewService = courseReviewService
+		courseReviewController.tokenService = tokenService
+		courseReviewController.courseID = course.id
+		self.navigationController?.pushViewController(courseReviewController, animated: true)
+	}
 }

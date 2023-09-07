@@ -18,6 +18,12 @@
 		94A5093B2A8FE29C002087F7 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5093A2A8FE29C002087F7 /* Course.swift */; };
 		94A509422A907D4F002087F7 /* TokenServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A509412A907D4F002087F7 /* TokenServiceStub.swift */; };
 		94A509442A9114B5002087F7 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A509432A9114B5002087F7 /* CourseTableViewCell.swift */; };
+		94A509472A97BF24002087F7 /* CourseReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A509462A97BF24002087F7 /* CourseReviewViewController.swift */; };
+		94A5094D2A97C3F9002087F7 /* CourseReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5094C2A97C3F9002087F7 /* CourseReviewView.swift */; };
+		94A5094F2A97C596002087F7 /* CourseReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5094E2A97C596002087F7 /* CourseReviewTableViewCell.swift */; };
+		94A509512A97C5C6002087F7 /* CourseReviewResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A509502A97C5C6002087F7 /* CourseReviewResponseDTO.swift */; };
+		94A509532A97C62C002087F7 /* CourseReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A509522A97C62C002087F7 /* CourseReview.swift */; };
+		94A509562A97CDAD002087F7 /* CourseReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A509552A97CDAD002087F7 /* CourseReviewService.swift */; };
 		94BFFD622A8A470D002798D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFD612A8A470D002798D0 /* AppDelegate.swift */; };
 		94BFFD642A8A470D002798D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BFFD632A8A470D002798D0 /* SceneDelegate.swift */; };
 		94BFFD6B2A8A470E002798D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94BFFD6A2A8A470E002798D0 /* Assets.xcassets */; };
@@ -79,6 +85,12 @@
 		94A5093D2A8FE989002087F7 /* honeycourses.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = honeycourses.xctestplan; sourceTree = "<group>"; };
 		94A509412A907D4F002087F7 /* TokenServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenServiceStub.swift; sourceTree = "<group>"; };
 		94A509432A9114B5002087F7 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
+		94A509462A97BF24002087F7 /* CourseReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseReviewViewController.swift; sourceTree = "<group>"; };
+		94A5094C2A97C3F9002087F7 /* CourseReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseReviewView.swift; sourceTree = "<group>"; };
+		94A5094E2A97C596002087F7 /* CourseReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseReviewTableViewCell.swift; sourceTree = "<group>"; };
+		94A509502A97C5C6002087F7 /* CourseReviewResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseReviewResponseDTO.swift; sourceTree = "<group>"; };
+		94A509522A97C62C002087F7 /* CourseReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseReview.swift; sourceTree = "<group>"; };
+		94A509552A97CDAD002087F7 /* CourseReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseReviewService.swift; sourceTree = "<group>"; };
 		94BFFD5E2A8A470D002798D0 /* honeycourses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = honeycourses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BFFD612A8A470D002798D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94BFFD632A8A470D002798D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +200,7 @@
 				94A5093A2A8FE29C002087F7 /* Course.swift */,
 				94BFFDAF2A8BE514002798D0 /* CourseCategory.swift */,
 				94A509352A8FE12C002087F7 /* CourseListCategory.swift */,
+				94A509522A97C62C002087F7 /* CourseReview.swift */,
 			);
 			name = VO;
 			sourceTree = "<group>";
@@ -196,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				94A509332A8FDE0F002087F7 /* CourseDTO.swift */,
+				94A509502A97C5C6002087F7 /* CourseReviewResponseDTO.swift */,
 			);
 			name = DTO;
 			sourceTree = "<group>";
@@ -206,6 +220,24 @@
 				94A509412A907D4F002087F7 /* TokenServiceStub.swift */,
 			);
 			path = Stub;
+			sourceTree = "<group>";
+		};
+		94A509452A97BEEF002087F7 /* CourseReview */ = {
+			isa = PBXGroup;
+			children = (
+				94A5094E2A97C596002087F7 /* CourseReviewTableViewCell.swift */,
+				94A5094C2A97C3F9002087F7 /* CourseReviewView.swift */,
+				94A509462A97BF24002087F7 /* CourseReviewViewController.swift */,
+			);
+			name = CourseReview;
+			sourceTree = "<group>";
+		};
+		94A509542A97CD99002087F7 /* CourseReviewService */ = {
+			isa = PBXGroup;
+			children = (
+				94A509552A97CDAD002087F7 /* CourseReviewService.swift */,
+			);
+			name = CourseReviewService;
 			sourceTree = "<group>";
 		};
 		94BFFD552A8A470D002798D0 = {
@@ -281,6 +313,7 @@
 			children = (
 				94BFFDA32A8B2D4B002798D0 /* Base */,
 				94BFFD982A8A980C002798D0 /* Course */,
+				94A509452A97BEEF002087F7 /* CourseReview */,
 				94BFFD992A8A983A002798D0 /* Community */,
 				94BFFD9A2A8A9843002798D0 /* MyInfo */,
 			);
@@ -336,6 +369,7 @@
 		94BFFDB12A8D28E3002798D0 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				94A509542A97CD99002087F7 /* CourseReviewService */,
 				94BFFDC92A8D3B95002798D0 /* CourseService */,
 				94BFFDCC2A8D3CA9002798D0 /* NetworkError.swift */,
 				94BFFDB22A8D28FB002798D0 /* NetworkService.swift */,
@@ -534,17 +568,23 @@
 				94BFFDA92A8B309D002798D0 /* CourseView.swift in Sources */,
 				94BFFDED2A8FC3FB002798D0 /* NetworkServiceImplement.swift in Sources */,
 				94BFFDE12A8FA72D002798D0 /* AuthService.swift in Sources */,
+				94A509562A97CDAD002087F7 /* CourseReviewService.swift in Sources */,
 				94BFFDEA2A8FC397002798D0 /* TokenServiceImplement.swift in Sources */,
 				94BFFD9C2A8A9889002798D0 /* CourseViewController.swift in Sources */,
 				94BFFD9E2A8A98A6002798D0 /* CommunityViewController.swift in Sources */,
+				94A5094F2A97C596002087F7 /* CourseReviewTableViewCell.swift in Sources */,
 				94BFFDA52A8B2D5B002798D0 /* BaseView.swift in Sources */,
 				94A509342A8FDE0F002087F7 /* CourseDTO.swift in Sources */,
 				94A509442A9114B5002087F7 /* CourseTableViewCell.swift in Sources */,
 				94BFFDCD2A8D3CA9002798D0 /* NetworkError.swift in Sources */,
+				94A509512A97C5C6002087F7 /* CourseReviewResponseDTO.swift in Sources */,
 				94BFFDA72A8B2F13002798D0 /* BaseViewController.swift in Sources */,
 				94A509362A8FE12C002087F7 /* CourseListCategory.swift in Sources */,
+				94A5094D2A97C3F9002087F7 /* CourseReviewView.swift in Sources */,
 				94BFFDE52A8FC2D0002798D0 /* CourseServiceImplement.swift in Sources */,
+				94A509532A97C62C002087F7 /* CourseReview.swift in Sources */,
 				94BFFDE32A8FAECB002798D0 /* TokenService.swift in Sources */,
+				94A509472A97BF24002087F7 /* CourseReviewViewController.swift in Sources */,
 				94BFFDAD2A8B3276002798D0 /* MyInfoView.swift in Sources */,
 				94BFFDA02A8A98BA002798D0 /* MyInfoViewController.swift in Sources */,
 				94BFFDAB2A8B3200002798D0 /* CommunityView.swift in Sources */,
